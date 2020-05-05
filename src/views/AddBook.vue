@@ -39,7 +39,7 @@
                 var _this = this;
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        axios.post("http://localhost:8082/books/add",this.ruleForm).then(function (resp) {
+                        axios.post("http://localhost:8081/books/add",this.ruleForm).then(function (resp) {
                             // console.log(resp)
                             if(resp.data){
                                 _this.$alert('添加成功', '提示', {

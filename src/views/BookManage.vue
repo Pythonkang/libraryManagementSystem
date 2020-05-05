@@ -50,7 +50,7 @@
                 if(_this.searchContent.length==0||_this.searchContent===''){
                     _this.$message.warning("请输入查询内容")
                 }else{
-                    axios.get("http://localhost:8082/books/search?keyword="+_this.searchContent).then(function (resp) {
+                    axios.get("http://localhost:8081/books/search?keyword="+_this.searchContent).then(function (resp) {
                         console.log(resp)
                         _this.tableData = resp.data;
                         _this.total = resp.data.length;
@@ -60,7 +60,7 @@
             change(currentPage){
                 // console.log(currentPage)
                 var _this = this;
-                axios.get("http://localhost:8082/books/findAll/"+(currentPage-1)+"/6").then(function (resp) {
+                axios.get("http://localhost:8081/books/findAll/"+(currentPage-1)+"/6").then(function (resp) {
                     console.log(resp)
                     _this.tableData = resp.data.content;
                     _this.total  = resp.data.totalElements;
@@ -81,7 +81,7 @@
                     cancelButtonText: '取消',
                     type: 'warning'
                 }).then(() => {
-                    axios.delete("http://localhost:8082/books/delete/"+row.id).then(function (resp) {
+                    axios.delete("http://localhost:8081/books/delete/"+row.id).then(function (resp) {
                         _this.$message({
                             type: 'success',
                             message: '删除成功'
@@ -113,7 +113,7 @@
         },
         created(){
             var _this = this;
-            axios.get("http://localhost:8082/books/findAll/0/6").then(function (resp) {
+            axios.get("http://localhost:8081/books/findAll/0/6").then(function (resp) {
                 // console.log(resp)
                 _this.tableData = resp.data.content;
                 _this.total = resp.data.totalElements;
