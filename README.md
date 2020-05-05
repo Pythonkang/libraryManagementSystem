@@ -16,7 +16,7 @@ npm run build
 ```
 
 ### Customize configuration
-后端地址 [后端git地址](https://github.com/yidou120/springboot-vue)  
+后端地址 [后端git地址](https://github.com/Pythonkang/library_management_system)  
 
 ![首页](/src/assets/index.jpg)  
 ![增加](/src/assets/add.jpg)  
